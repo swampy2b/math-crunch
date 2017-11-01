@@ -6,9 +6,9 @@ reused library: (https://github.com/basoltanifarWVUMix/program1)
 Pass the operation and operands you want to execute to math-crunch as command lin parameters
 to add:
 
-'''
+```
 math-crunch --add 5 7
-'''
+```
 
 Other operations follow as one might expect
 
