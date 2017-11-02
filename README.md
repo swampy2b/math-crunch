@@ -3,9 +3,22 @@
 reused library: (https://github.com/basoltanifarWVUMix/program1)
 
 ### Run math-crunch
-Pass the operation and operands you want to execute to math-crunch as command lin parameters
+Pass the operation and operands you want to execute to math-crunch as command line parameters
 to add:
 
+```
+Specify a valid operation:
+  math-crunch [operation] [operands..]
+  Valid operations are:
+   --add num1 num2
+   --subtract num1 num2
+   --multiply num1 num2
+   --divide num1 num2
+   --power num1 num2
+   --sqrt num1
+   --convert num1 [decimal | binary | octal | hexa]       
+```
+For example:
 ```
 math-crunch --add 5 7
 ```
