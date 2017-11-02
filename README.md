@@ -22,11 +22,11 @@ For example:
 ```
 math-crunch --add 5 7
 ```
-
+For the ```--convert``` action, the convert to base defaults to "decimal" if not specified.
 Other operations follow as one might expect
 
 ### Reuse Library
 
 The Arithmetic library was simple to use for the base arithmetic operations.
 
-The conversion was more complex.  It wasn't immediately obvious that the convert function always converts to all other base types.  Needed a wrapper function to select a specific conversion.
+The conversion was more complex.  It wasn't immediately obvious that the convert function always converts to all other base types.  Needed a wrapper function to select a specific conversion, which hadn't planned for, basing operation on the test case.  Works really well once figured out though.
