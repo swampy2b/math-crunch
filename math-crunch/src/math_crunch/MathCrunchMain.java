@@ -9,6 +9,17 @@ import java.io.*;
  *
  */
 public class MathCrunchMain {
+	
+	public static final String usageText = "Specify a valid operation: \n\n "
+			+ "math-crunch [operation] [operands..]\n\n"
+			+ "Valid operations are:\n"
+			+ " --add num1 num2\n"
+			+ " --subtract num1 num2\n"
+			+ " --multiply num1 num2\n"
+			+ " --divide num1 num2\n"
+			+ " --power num1 num2\n"
+			+ " --sqrt num1 \n"
+			+ " --convert num1 [to-base]\n";
 
 	/**
 	 * @param args
@@ -17,19 +28,19 @@ public class MathCrunchMain {
 		// TODO Auto-generated method stub
 		MathCrunchProcessor cruncher = new MathCrunchProcessor(null);
 		if (args.length == 0) {
-			System.out.println(" Specify an operation and operands.");
+			System.out.println(usageText);
 			System.exit(-1);
 		}
 		else if (args.length == 2) {
 			System.out.println(args[0] + " " + args[1]);
 			if (args[0].contains("convert")) {
-				System.out.println(cruncher.CrunchConvert(args[1]));
+				System.out.println(cruncher.CrunchConvert(args[1], null));
 			}
 			else if (args[0].contains("sqrt")) {
 				System.out.println(cruncher.CrunchSqrt(args[1]));
 			}
 			else {
-				System.out.println(" Specify an operation and operands.");
+				System.out.println(usageText);
 				System.exit(-2);
 			}
 		}
@@ -51,8 +62,11 @@ public class MathCrunchMain {
 				System.out.println(cruncher.CrunchPower(args[1], args[2]));
 				
 			}
+			else if (args[0].contains("convert")) {
+				System.out.println(cruncher.CrunchConvert(args[1], args[2]));
+			}
 			else {
-				System.out.println(" Specify an operation and operands.");
+				System.out.println(usageText);
 				System.exit(-3);
 			}
 		}

@@ -23,14 +23,16 @@ public class MathCrunchProcessor {
 		else
 			this.cruncher = new Arithmetic();
 	}
-	public String CrunchConvert(String num) {
-		String result = "";
-		Map<String, String> resMap = cruncher.numberBaseConvertor(num);
-		for (Iterator<String> val = resMap.values().iterator(); val.hasNext();) {
-			result = "Converting: " + num + "to Base 10: " + val.next();
-		}
+	
+	public String CrunchConvert(String num, String base) {
 
-			return result;
+		// default to base 10 if not specified
+		String toBase = (base != null) ? base : "decimal"; 
+		Map<String, String> resMap = cruncher.numberBaseConvertor(num);
+		
+		String result = "Converting: " + num + " to " + toBase + ": " + resMap.get(toBase);
+
+		return result;
 
 	}
 	public String CrunchSqrt(String num) {
